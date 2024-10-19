@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.boot.CommandLineRunner;
 
-
+import app.vercel.adityanmahapatra.runnerz.run.RunRepository;
 import app.vercel.adityanmahapatra.runnerz.run.location;
 import app.vercel.adityanmahapatra.runnerz.run.run;
 
@@ -23,14 +23,14 @@ public class RunnerzApplication {
 		
 	}
 
-	@Bean
-	CommandLineRunner runner(){
-		return args -> {
-			run run = new run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plus(1,ChronoUnit.HOURS),5,location.OUTDOOR);
-			log.info("Run: " + run);
+	// @Bean
+	// CommandLineRunner runner(RunRepository runRepository) {
+	// 	return args -> {
+	// 		run run = new run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plus(1,ChronoUnit.HOURS),5,location.OUTDOOR);
+	// 		runRepository.create(run);
 
-		};
+	// 	};
 
-	};
+	// }
 
 }
